@@ -1,0 +1,853 @@
+/* =========================================
+   1. БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+   ========================================= */
+:root {
+    --bg-color: #0A0B0E;
+    --card-bg: #15171C;
+    --text-main: #F4F4F6;
+    --text-muted: #8B8D98;
+    --accent: #FF4D00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { 
+    font-weight: 400; 
+    line-height: 1.1; 
+}
+
+.italic {
+    font-family: 'Oranienbaum', serif;
+    font-style: italic;
+    color: var(--accent);
+}
+
+/* =========================================
+   2. ШАПКА САЙТА (ЗАКРЕПЛЕННАЯ)
+   ========================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 11, 14, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo { 
+    font-weight: 600; 
+    letter-spacing: 2px; 
+}
+
+.nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover { 
+    color: var(--accent); 
+}
+
+.btn-contact {
+    border: 1px solid var(--text-muted);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff;
+}
+
+/* =========================================
+   3. ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+}
+
+.video-placeholder {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(10, 11, 14, 0.9) 0%, rgba(10, 11, 14, 0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content { 
+    max-width: 800px; 
+    position: relative; 
+    z-index: 2; 
+}
+
+.hero h1 { 
+    font-size: clamp(3rem, 6vw, 5.5rem); 
+    margin-bottom: 24px; 
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* =========================================
+   4. КНОПКИ
+   ========================================= */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary:hover { 
+    background-color: #e64500; 
+    transform: translateY(-3px); 
+}
+
+.large-btn { 
+    font-size: 1.2rem; 
+    padding: 20px 50px; 
+}
+
+/* Вторичная кнопка (Почта, ВК) */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent;
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 40px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-main);
+    transform: translateY(-3px);
+}
+
+.btn-secondary svg {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.btn-secondary:hover svg {
+    opacity: 1;
+}
+
+/* =========================================
+   5. СЕТКА ПОРТФОЛИО (ГЛАВНАЯ)
+   ========================================= */
+.works-section { 
+    padding: 100px 5%; 
+}
+
+.section-title { 
+    font-size: 2.5rem; 
+    margin-bottom: 50px; 
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.portfolio-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.portfolio-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+.media-container {
+    width: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+/* Единый вертикальный формат карточек (9:16) */
+.portfolio-card .media-container { 
+    aspect-ratio: 9 / 16; 
+    max-height: 600px; 
+    width: 100%;
+}
+
+.media-container iframe,
+.media-container img,
+.media-container video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+.img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+    color: #8B8D98; font-size: 0.9rem;
+    text-align: center; padding: 20px;
+}
+
+.card-info {
+    padding: 20px;
+    background: var(--card-bg);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-info h3 { 
+    font-size: 1.2rem; 
+    margin-bottom: 5px; 
+}
+
+.card-info p { 
+    font-size: 0.9rem; 
+    color: var(--text-muted); 
+}
+
+/* =========================================
+   6. БЛОК "ОБО МНЕ"
+   ========================================= */
+.about-section {
+    padding: 100px 5%;
+    background-color: var(--card-bg);
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap; 
+}
+
+.about-photo {
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Инфографика в блоке Обо мне */
+.about-features {
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--accent);
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 10px rgba(255, 77, 0, 0.4)); 
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-text {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.feature-text strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.feature-text span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   7. СТРАНИЦЫ КЕЙСОВ (РАЗДЕЛОВ)
+   ========================================= */
+.case-hero {
+    padding: 150px 5% 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.case-list {
+    padding: 0 5% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.case-item {
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.case-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.case-item-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.case-refs h3,
+.case-video h3 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-family: 'Oranienbaum', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.refs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.ref-img {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B8D98;
+    font-size: 0.8rem;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Чтобы теги <img> в референсах тоже работали корректно */
+img.ref-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.case-description p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.case-description strong {
+    color: var(--text-main);
+}
+
+/* Обертки для видео */
+.video-wrapper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.video-wrapper.vertical {
+    aspect-ratio: 9 / 16;
+    max-height: 600px;
+    margin: 0 auto;
+}
+
+.video-wrapper.horizontal {
+    aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe,
+.video-wrapper img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+/* =========================================
+   8. ПОДВАЛ (ФУТЕР) И КОНТАКТЫ
+   ========================================= */
+.footer { 
+    padding: 120px 5% 50px; 
+    text-align: center; 
+}
+
+.footer h2 { 
+    font-size: clamp(2rem, 5vw, 4rem); 
+    margin-bottom: 40px; 
+}
+
+/* Контейнер для кнопок связи */
+.contact-links {
+    display: flex;
+    flex-direction: column; /* По умолчанию столбиком (для мобилок) */
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Позволяет кнопкам переноситься, если не влезают */
+}
+
+.copyright { 
+    margin-top: 80px; 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+}
+
+/* =========================================
+   9. АНИМАЦИИ
+   ========================================= */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* =========================================
+   10. АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА)
+   ========================================= */
+
+/* Планшеты и небольшие ноутбуки */
+@media (max-width: 900px) {
+    .case-item-inner {
+        grid-template-columns: 1fr; /* Кейсы в одну колонку */
+        gap: 30px;
+    }
+    
+    .case-hero {
+        padding-top: 100px;
+    }
+
+    .video-wrapper.vertical {
+        max-height: 500px;
+    }
+}
+
+/* Компьютеры (ставим кнопки в ряд) */
+@media (min-width: 768px) {
+    .contact-links {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 20px; 
+    }
+}
+
+/* Смартфоны */
+@media (max-width: 768px) {
+    .portfolio-grid { 
+        grid-template-columns: 1fr; /* Карточки портфолио в одну колонку */
+    }
+    
+    .about-content { 
+        flex-direction: column; /* Блок "Обо мне" в колонку */
+        align-items: flex-start; /* Выравниваем по левому краю */
+    }
+    
+    .about-photo { 
+        width: 100%; 
+        height: 350px; 
+    }
+    
+    .about-features {
+        width: 100%; /* Инфографика на всю ширину */
+        margin-top: 20px;
+    }
+
+    .nav { 
+        display: none; /* Прячем десктопное меню (сюда потом добавим бургер) */
+    }
+    
+    .hero-overlay { 
+        background: linear-gradient(to bottom, rgba(10, 11, 14, 0.8) 0%, rgba(10, 11, 14, 0.9) 100%); 
+    }
+}
+
+/* =========================================
+   11. СТИЛИ ДЛЯ ТЕКСТОВЫХ ССЫЛОК
+   ========================================= */
+
+/* Применяем стиль к ссылкам внутри абзацев в текстовых блоках */
+.about-text p a, 
+.case-description p a,
+.case-block p a {
+    color: #FFD700; /* Яркий золотисто-желтый цвет, отлично виден на темном */
+    font-weight: 600; /* Делаем шрифт жирнее */
+    text-decoration: none; /* Убираем стандартное синее подчеркивание */
+    border-bottom: 2px solid rgba(255, 215, 0, 0.4); /* Аккуратное подчеркивание в тон */
+    transition: all 0.3s ease; /* Плавность при наведении */
+}
+
+/* Эффект при наведении мыши */
+.about-text p a:hover, 
+.case-description p a:hover,
+.case-block p a:hover {
+    color: var(--accent); /* При наведении меняем на твой оранжевый */
+    border-bottom-color: var(--accent); /* Подчеркивание тоже становится оранжевым */
+}
+
+/* =========================================
+   12. БЛОКИ-КАРУСЕЛИ (ГАЛЕРЕИ)
+   ========================================= */
+.gallery-block {
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+/* Контейнер для карусели (ограничиваем ширину для красоты) */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Дорожка карусели */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Магия для плавного свайпа */
+    padding-bottom: 20px; /* Место для скроллбара */
+    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
+}
+
+/* Скрываем скроллбар в Chrome/Safari */
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Общие стили для картинок в карусели */
+.carousel-track img {
+    scroll-snap-align: center; /* Картинка останавливается по центру */
+    border-radius: 16px;
+    object-fit: cover;
+    background-color: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* --- СПЕЦИФИКА ДЛЯ ИЛЛЮСТРАЦИЙ (разные размеры) --- */
+.carousel-illustrations img {
+    height: 500px; /* Фиксированная высота */
+    width: auto;   /* Ширина подстраивается под пропорции картинки */
+    max-width: 90vw; /* Защита, чтобы гигантские картинки не сломали экран */
+    object-fit: contain; /* Показываем картинку целиком */
+}
+
+/* --- СПЕЦИФИКА ДЛЯ ИНФОГРАФИКИ (формат маркетплейсов) --- */
+.carousel-infographics img {
+    width: 320px; /* Ширина как у реальной карточки на экране */
+    aspect-ratio: 3 / 4; /* Стандарт Wildberries / Ozon */
+    object-fit: cover;
+}
+
+/* --- ТЕКСТ ПОД КАРУСЕЛЬЮ --- */
+.gallery-text {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 5%;
+}
+
+.gallery-text p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.gallery-text strong {
+    color: var(--text-main);
+}
+
+/* Кнопки навигации (Стрелочки) */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(10, 11, 14, 0.8);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* Прячем стрелки на мобильных (там работает свайп пальцем) */
+@media (max-width: 768px) {
+    .carousel-btn { display: none; }
+    .carousel-illustrations img { height: 350px; } /* Уменьшаем высоту для телефонов */
+    .carousel-infographics img { width: 260px; }
+}
+
+/* =========================================
+   13. МОБИЛЬНАЯ ВЕРСИЯ (БУРГЕР-МЕНЮ)
+   ========================================= */
+
+/* По умолчанию (на компьютерах) бургер и мобильное меню скрыты */
+.burger { display: none; }
+.mobile-menu { display: none; }
+
+/* Планшеты и смартфоны */
+@media (max-width: 900px) {
+    /* Прячем обычное меню */
+    .nav { display: none; }
+
+    .header {
+        z-index: 1002; /* Поднимаем шапку выше меню */
+    }
+    .mobile-menu {
+        z-index: 1001; /* Меню теперь будет чуть ниже шапки */
+    }
+
+    /* Показываем иконку бургера */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001; /* Поверх шапки */
+    }
+
+    /* Полоски бургера */
+    .burger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-main);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Анимация превращения бургера в крестик (когда меню открыто) */
+    .burger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--accent);
+    }
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--accent);
+    }
+
+    /* Само мобильное меню */
+    .mobile-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(10, 11, 14, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        
+        /* Изначально меню скрыто вверху экрана */
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: all 0.4s ease;
+    }
+
+    /* Когда добавляется класс active, меню плавно выезжает */
+    .mobile-menu.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Ссылки внутри мобильного меню */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .mobile-nav a {
+        font-size: 24px;
+        color: var(--text-main);
+        text-decoration: none;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+        color: var(--accent);
+    }
+}
+
+/* =========================================
+   14. МОБИЛЬНАЯ ПОЛИРОВКА (ТЕКСТЫ И ОТСТУПЫ)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Уменьшаем главный заголовок на первом экране, чтобы он не занимал полэкрана */
+    .hero h1 {
+        font-size: 2.5rem; 
+    }
+    
+    /* 2. Уменьшаем отступы в секциях, чтобы на телефоне было больше контента */
+    .works-section, 
+    .about-section, 
+    .case-list {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* 3. Делаем заголовки разделов чуть поменьше */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* 4. Уменьшаем высоту карусели с иллюстрациями (те самые 350px) */
+    .carousel-illustrations img,
+    .carousel-illustrations .img-placeholder {
+        height: 350px;
+    }
+
+    /* 5. Карточки инфографики делаем чуть уже, чтобы было видно следующую */
+    .carousel-infographics img,
+    .carousel-infographics .img-placeholder {
+        width: 260px;
+    }
+
+    /* 6. Кнопки в подвале делаем на всю ширину экрана (так удобнее тыкать пальцем) */
+    .contact-links {
+        width: 100%;
+    }
+    .btn-primary, 
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}

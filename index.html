@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Николай Шаталов — Creative & AI Designer</title>
+    
+    <!-- === ИКОНКА САЙТА (FAVICON) === -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- === SEO И ОПИСАНИЕ === -->
+    <meta name="description" content="Создаю визуальные миры на стыке AI и дизайна. Реклама, fashion, иллюстрации, интерфейсы и приложения. От идеи до готового результата.">
+    <meta name="keywords" content="AI видео, дизайнер, иллюстратор, инфографика, маркетплейсы, android разработка, Николай Шаталов">
+
+    <!-- === OPEN GRAPH (ПРЕВЬЮ ДЛЯ TELEGRAM, VK, MAX) === -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://твой-домен.ru/"> <!-- Замени на свой будущий домен -->
+    <meta property="og:title" content="Николай Шаталов — Creative & AI Designer">
+    <meta property="og:description" content="Создаю визуальные миры на стыке AI и дизайна. Реклама, fashion, иллюстрации и интерфейсы.">
+    <meta property="og:image" content="https://твой-домен.ru/preview.jpg"> <!-- Замени на свой домен -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- === TWITTER CARDS (на всякий случай) === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Николай Шаталов — Creative & AI Designer">
+    <meta name="twitter:description" content="Создаю визуальные миры на стыке AI и дизайна.">
+    <meta name="twitter:image" content="https://твой-домен.ru/preview.jpg">
+
+    <!-- === ШРИФТЫ И СТИЛИ === -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oranienbaum&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <!-- Шапка -->
+    <header class="header">
+        <a href="index.html" class="logo" style="color: inherit; text-decoration: none;">N. SHATALOV</a>
+        
+        <!-- Меню для компьютера -->
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="ai-video.html">AI-видео</a>
+            <a href="illustrations.html">Иллюстрации</a>
+            <a href="infographics.html">Инфографика</a>
+            <a href="android.html">Android</a>
+            <a href="#contact" class="btn-contact">Связаться</a>
+        </nav>
+
+        <!-- Кнопка Бургер (видна только на мобильных) -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Выезжающее мобильное меню -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html">Главная</a>
+            <a href="ai-video.html">AI-видео</a>
+            <a href="illustrations.html">Иллюстрации</a>
+            <a href="infographics.html">Инфографика</a>
+            <a href="android.html">Android</a>
+            <a href="#contact" style="color: var(--accent);">Связаться</a>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay loop muted playsinline class="video-placeholder">
+                <source src="fon.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Создаю <span class="italic">визуальные миры</span> на стыке AI и дизайна</h1>
+            <p class="hero-subtitle">Реклама, fashion, иллюстрации и интерфейсы. От идеи до готового результата.</p>
+            <a href="#works" class="btn-primary">Смотреть работы</a>
+        </div>
+    </section>
+
+    <!-- ВИТРИНА (Только избранные работы) -->
+    <section id="works" class="works-section reveal">
+        <h2 class="section-title reveal">Избранное <span class="italic">2026</span></h2>
+        
+                <div class="portfolio-grid reveal">
+
+            <!-- Карточка 1: AI-видео -->
+            <a href="ai-video.html" class="portfolio-card">
+                <div class="media-container">
+                    <iframe 
+                        src="https://vkvideo.ru/video_ext.php?oid=-238610000&id=456239036&hash=4d9ea8a613e0dfb5&hd=4&autoplay=1&muted=1&loop=1" 
+                        allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="card-info">
+                    <h3>AI-видео и реклама</h3>
+                    <p>Ролики, fashion, скетчи →</p>
+                </div>
+            </a>
+
+            <!-- Карточка 2: Иллюстрации -->
+            <a href="illustrations.html" class="portfolio-card">
+                <div class="media-container">
+                    <img src="img2/illustration.jpg" alt="Иллюстрации, обложки, картинки">
+                </div>
+                <div class="card-info">
+                    <h3>Иллюстрации</h3>
+                    <p>Образы, персонажи, визуальные истории →</p>
+                </div>
+            </a>
+
+            <!-- Карточка 3: Инфографика -->
+            <a href="infographics.html" class="portfolio-card">
+                <div class="media-container">
+                    <img src="img3/infigraf.jpg" alt="Инфографика, карточки товаров">
+                </div>
+                <div class="card-info">
+                    <h3>Инфографика для маркетплейсов</h3>
+                    <p>Карточки товаров и оформление →</p>
+                </div>
+            </a>
+
+            <!-- Карточка 4: Android-приложения -->
+            <a href="android.html" class="portfolio-card">
+                <div class="media-container">
+                    <img src="img4/android.jpg" alt="Мокап Android приложения">
+                </div>
+                <div class="card-info">
+                    <h3>Android-приложения</h3>
+                    <p>UI/UX, интерфейсы, видео-демо →</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+        <section id="about" class="about-section reveal">
+        <h2 class="section-title">Технологии — это инструмент. <span class="italic">Идея — главное.</span></h2>
+        
+        <div class="about-content">
+            <!-- 1. Фото -->
+            <div class="about-photo">
+                <img src="about.jpg" alt="Обо мне">
+            </div>
+
+            <!-- 2. Текст -->
+            <div class="about-text">
+                <p>Я, Николай Шаталов.
+                <p>Соединяю креатив с мощью нейросетей. 
+                <p>Работаю с графикой, монтажом и цифровыми продуктами.</p>
+                <p>Люблю нестандартные решения и превращаю задачи в законченные проекты.</p>
+                <p>🔹 Для авторов и творцов: создаю иллюстрации для книг и обложки для треков, которые звучат еще до нажатия Play. Твой текст или музыка станут видимыми.<br>
+                🔹 Для бизнеса и селлеров: делаю клипы для соцсетей и карточки для WB/Ozon, которые повышают CTR и доносимы до корзины.<br>
+                🔹 Для семьи и памяти: реставрирую старые фото и делаю из них стильный арт, возвращая эмоции в цифре.
+            </div>
+
+            <!-- 3. Инфографика (Преимущества) -->
+            <div class="about-features">
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Иконка Молния -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <strong>AI и креатив</strong><br>
+                        <span>для ваших задач</span>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Иконка Алмаз -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 18 3 22 9 12 21 2 9"></polygon><line x1="2" y1="9" x2="22" y2="9"></line><line x1="12" y1="21" x2="6" y2="3"></line><line x1="12" y1="21" x2="18" y2="3"></line></svg>
+                    </div>
+                    <div class="feature-text">
+                        <strong>Яркий результат</strong><br>
+                        <span>и внимание к деталям</span>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Иконка Часы -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="feature-text">
+                        <strong>Экономия времени</strong><br>
+                        <span>и ресурсов</span>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <!-- Иконка Сердце -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <strong>Индивидуальный</strong><br>
+                        <span>подход</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+       <footer id="contact" class="footer reveal">
+        <h2>ЕСТЬ ИДЕЯ? <span class="italic">ДАВАЙ ВОПЛОТИМ.</span></h2>
+        
+               <div class="contact-links">
+            <!-- Главная кнопка -->
+            <a href="https://max.ru/u/f9LHodD0cOIX4zShpes5gpiHHzrgWicbMUCs_BY6eT1Prodhkut4Q4rfSrI" target="_blank" rel="noopener" class="btn-primary large-btn">Написать в MAX</a>
+            
+            <!-- Кнопка Почты -->
+            <a href="mailto:nik_design@mail.ru" class="btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                nik_design@mail.ru
+            </a>
+
+            <!-- Кнопка ВК (ссылка обновлена) -->
+            <a href="https://vk.ru/aiinventor" target="_blank" rel="noopener" class="btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.588-.19 1.341 1.26 2.14 1.817.605.421 1.064.329 1.064.329l2.142-.03s1.12-.07.589-.955c-.044-.072-.312-.665-1.61-1.882-1.36-1.274-1.178-1.067.46-3.27 1.001-1.347 1.401-2.17 1.276-2.522-.12-.335-.856-.246-.856-.246l-2.41.015s-.179-.025-.311.055c-.13.078-.213.262-.213.262s-.381 1.024-.89 1.896c-1.07 1.848-1.497 1.945-1.671 1.831-.407-.268-.305-1.073-.305-1.646 0-1.793.267-2.54-.522-2.734-.262-.064-.454-.107-1.124-.114-.86-.009-1.589.003-2.002.21-.275.138-.487.447-.358.464.16.022.522.099.714.363.248.342.24 1.11.24 1.11s.142 2.115-.332 2.377c-.326.181-.773-.187-1.729-1.872-.492-.869-.863-1.827-.863-1.827s-.071-.178-.198-.273c-.154-.116-.37-.152-.37-.152l-2.289.015s-.344.01-.47.163c-.112.136-.009.417-.009.417s1.792 4.286 3.822 6.443c1.86 1.976 3.972 1.846 3.972 1.846h.957z"/>
+                </svg>
+                ВКонтакте
+            </a>
+        </div>
+        
+        <p class="copyright">© 2026 Николай Шаталов. Creative & AI Design.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

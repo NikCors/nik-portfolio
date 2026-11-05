@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инфографика — Николай Шаталов</title>
+    <meta name="description" content="Инфографика для маркетплейсов.">
+    <meta property="og:title" content="Инфографика — Николай Шаталов">
+    <meta property="og:description" content="Создание образов, персонажей и атмосферных концептов.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oranienbaum&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <!-- Шапка -->
+    <header class="header">
+        <a href="index.html" class="logo" style="color: inherit; text-decoration: none;">N. SHATALOV</a>
+        
+        <!-- Меню для компьютера -->
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="ai-video.html">AI-видео</a>
+            <a href="illustrations.html">Иллюстрации</a>
+            <a href="infographics.html">Инфографика</a>
+            <a href="android.html">Android</a>
+            <a href="#contact" class="btn-contact">Связаться</a>
+        </nav>
+
+        <!-- Кнопка Бургер (видна только на мобильных) -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Выезжающее мобильное меню -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <a href="index.html">Главная</a>
+            <a href="ai-video.html">AI-видео</a>
+            <a href="illustrations.html">Иллюстрации</a>
+            <a href="infographics.html">Инфографика</a>
+            <a href="android.html">Android</a>
+            <a href="#contact" style="color: var(--accent);">Связаться</a>
+        </nav>
+    </div>
+
+    <section class="case-hero">
+        <h1 class="section-title">Инфографика для <span class="italic">маркетплейсов</span></h1>
+        <p class="hero-subtitle" style="max-width: 100%;">Карточки товаров, баннеры и визуальное оформление.</p>
+    </section>
+
+    <section class="case-list" style="padding: 0 0 100px;">
+
+        <!-- БЛОК 1 УШМ и Перчатки -->
+        <div class="gallery-block">
+            <div class="carousel-container">
+                <div class="carousel-track carousel-infographics">
+                    <!-- ВРЕМЕННЫЕ ЗАГЛУШКИ. Когда будут картинки, замени их на <img src="путь_к_картинке.jpg"> -->
+                    <img src="img3/ushm1.jpg">
+                    <img src="img3/ushm2.jpg">
+                    <img src="img3/ushm3.jpg">
+                    <img src="img3/perch1.jpg">
+                    <img src="img3/perch2.jpg">
+                    <img src="img3/perch3.jpg">
+                </div>
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
+            
+            <div class="gallery-text">
+                <p><strong>Карточка товара на Wildberries:</strong> УШМ и Перчатки. Сделали акцент на преимуществах и УТП.</p>
+            </div>
+        </div>
+
+        <!-- БЛОК 2 Пальто Часы Пиджак -->
+        <div class="gallery-block">
+            <div class="carousel-container">
+                <div class="carousel-track carousel-infographics">
+                    <!-- ВРЕМЕННЫЕ ЗАГЛУШКИ. Когда будут картинки, замени их на <img src="путь_к_картинке.jpg"> -->
+                    <img src="img3/time.jpg">
+                    <img src="img3/palto.jpg">
+                    <img src="img3/pidzhak1.jpg">
+                    <img src="img3/pidzhak2.jpg">
+                </div>
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
+            
+            <div class="gallery-text">
+                <p><strong>Карточка товара на Wildberries:</strong> Примеры карточек для разных товаров</p>
+            </div>
+        </div>
+
+        <!-- БЛОК Банеры -->
+        <!-- <div class="gallery-block">
+            <div class="carousel-container">
+                <div class="carousel-track carousel-infographics">
+                    <div class="img-placeholder" style="height: 100%; flex-shrink: 0;">Баннер 1</div>
+                    <div class="img-placeholder" style="height: 100%; flex-shrink: 0;">Баннер 2</div>
+                </div>
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+            </div>
+            
+            <div class="gallery-text">
+                <p><strong>Рекламный баннер:</strong> Разработка для сезонной акции.</p>
+            </div>
+        </div> -->
+
+    </section>
+
+    <footer id="contact" class="footer">
+        <h2>ХОЧЕШЬ ТАКОЙ ЖЕ <span class="italic">РЕЗУЛЬТАТ?</span></h2>
+        <div class="contact-links">
+            <a href="https://max.ru/u/f9LHodD0cOIX4zShpes5gpiHHzrgWicbMUCs_BY6eT1Prodhkut4Q4rfSrI" target="_blank" rel="noopener" class="btn-primary large-btn">Написать в MAX</a>
+            <a href="mailto:nik_design@mail.ru" class="btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                nik_design@mail.ru
+            </a>
+            <a href="https://vk.ru/aiinventor" target="_blank" rel="noopener" class="btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.588-.19 1.341 1.26 2.14 1.817.605.421 1.064.329 1.064.329l2.142-.03s1.12-.07.589-.955c-.044-.072-.312-.665-1.61-1.882-1.36-1.274-1.178-1.067.46-3.27 1.001-1.347 1.401-2.17 1.276-2.522-.12-.335-.856-.246-.856-.246l-2.41.015s-.179-.025-.311.055c-.13.078-.213.262-.213.262s-.381 1.024-.89 1.896c-1.07 1.848-1.497 1.945-1.671 1.831-.407-.268-.305-1.073-.305-1.646 0-1.793.267-2.54-.522-2.734-.262-.064-.454-.107-1.124-.114-.86-.009-1.589.003-2.002.21-.275.138-.487.447-.358.464.16.022.522.099.714.363.248.342.24 1.11.24 1.11s.142 2.115-.332 2.377c-.326.181-.773-.187-1.729-1.872-.492-.869-.863-1.827-.863-1.827s-.071-.178-.198-.273c-.154-.116-.37-.152-.37-.152l-2.289.015s-.344.01-.47.163c-.112.136-.009.417-.009.417s1.792 4.286 3.822 6.443c1.86 1.976 3.972 1.846 3.972 1.846h.957z"/></svg>
+                ВКонтакте
+            </a>
+        </div>
+        <p class="copyright">© 2026 Николай Шаталов. Creative & AI Design.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Скрипт для карусели -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tracks = document.querySelectorAll('.carousel-track');
+            tracks.forEach(track => {
+                const prevBtn = track.parentElement.querySelector('.prev');
+                const nextBtn = track.parentElement.querySelector('.next');
+                
+                if(prevBtn && nextBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' });
+                    });
+                    nextBtn.addEventListener('click', () => {
+                        track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' });
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
